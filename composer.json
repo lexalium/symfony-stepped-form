@@ -1,0 +1,73 @@
+{
+    "name": "lexal/symfony-stepped-form",
+    "description": "Symfony Stepped Form Bundle.",
+    "license": "MIT",
+    "type": "symfony-bundle",
+    "authors": [
+        {
+            "name": "Alex Lex",
+            "email": "allapkov@gmail.com"
+        }
+    ],
+    "keywords": [
+        "symfony",
+        "stepped-form",
+        "dynamic stepped-form",
+        "multi-step form",
+        "multi-step"
+    ],
+    "require": {
+        "php": ">=8.1",
+        "lexal/http-stepped-form": "^4.0",
+        "symfony/config": "^6.4 || ^7.4 || ^8.0",
+        "symfony/dependency-injection": "^6.4 || ^7.4 || ^8.0",
+        "symfony/event-dispatcher-contracts": "^3.7",
+        "symfony/http-foundation": "^6.4.41 || ^7.4.13 || ^8.0.13",
+        "symfony/http-kernel": "^6.4 || ^7.4.12 || ^8.0.12"
+    },
+    "require-dev": {
+        "dealerdirect/phpcodesniffer-composer-installer": "^1.0.0",
+        "infection/infection": "^0.34.2",
+        "matthiasnoback/symfony-config-test": "^6.2",
+        "matthiasnoback/symfony-dependency-injection-test": "^6.3",
+        "phpstan/phpstan": "^2.2",
+        "phpunit/phpunit": "^10.5.62",
+        "roave/security-advisories": "dev-latest",
+        "symfony/twig-bundle": "^7.4",
+        "symfony/yaml": "^7.4.15",
+        "webimpress/coding-standard": "^1.4"
+    },
+    "suggest": {
+        "symfony/event-dispatcher": "Required to use Symfony Dispatcher as form Event Dispatcher (^6.4 || ^7.4 || ^8.0).",
+        "symfony/twig-bundle": "Required to use Twig as response renderer (^6.4 || ^7.4 || ^8.0)."
+    },
+    "autoload": {
+        "psr-4": {
+            "Lexal\\SymfonySteppedForm\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Lexal\\SymfonySteppedForm\\Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "infection/extension-installer": true
+        }
+    },
+    "scripts": {
+        "phpunit": "XDEBUG_MODE=coverage phpunit --coverage-text",
+        "phpstan": "phpstan",
+        "phpcs": "phpcs",
+        "infection": "infection -j4 --show-mutations",
+        "tests": [
+            "@phpcs",
+            "@phpstan",
+            "@phpunit",
+            "@infection"
+        ]
+    }
+}

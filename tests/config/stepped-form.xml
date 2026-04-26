@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xmlns:stepped-form="https://lexalium.org/schema/dic/stepped-form"
+              xsi:schemaLocation="http://symfony.com/schema/dic/services
+                            http://symfony.com/schema/dic/services/services-1.0.xsd
+                            https://lexalium.org/schema/dic/stepped-form
+                            https://lexalium.org/schema/dic/stepped-form/stepped-form-1.0.xsd
+">
+
+    <stepped-form:config>
+        <stepped-form:renderer>custom.renderer</stepped-form:renderer>
+
+        <stepped-form:form alias="form1">
+            <stepped-form:form-settings>Lexal\SymfonySteppedForm\Tests\FormSettings</stepped-form:form-settings>
+            <stepped-form:form-builder>custom.form_builder</stepped-form:form-builder>
+
+            <stepped-form:step key="step1">custom.step1</stepped-form:step>
+            <stepped-form:step key="step2">custom.step2</stepped-form:step>
+
+            <stepped-form:storage>
+                <stepped-form:class>Lexal\SymfonySteppedForm\Tests\Storage</stepped-form:class>
+                <stepped-form:argument name="$custom">1</stepped-form:argument>
+            </stepped-form:storage>
+        </stepped-form:form>
+    </stepped-form:config>
+
+</container>

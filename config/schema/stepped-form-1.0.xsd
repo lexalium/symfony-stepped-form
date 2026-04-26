@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<xsd:schema xmlns="https://lexalium.org/schema/dic/stepped-form"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            targetNamespace="https://lexalium.org/schema/dic/stepped-form"
+            elementFormDefault="qualified">
+
+    <xsd:element name="config" type="config" />
+
+    <xsd:complexType name="config">
+        <xsd:sequence>
+            <xsd:element name="renderer" type="xsd:string" minOccurs="0" maxOccurs="1" />
+            <xsd:element name="redirector" type="xsd:string" minOccurs="0" maxOccurs="1" />
+            <xsd:element name="event-dispatcher" type="xsd:string" minOccurs="0" maxOccurs="1" />
+
+            <xsd:element name="form" type="form" minOccurs="0" maxOccurs="unbounded" />
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="form">
+        <xsd:sequence>
+            <xsd:element name="form-settings" type="xsd:string" minOccurs="1" maxOccurs="1" />
+            <xsd:element name="form-builder" type="xsd:string" minOccurs="0" maxOccurs="1" />
+
+            <xsd:element name="step" type="step" minOccurs="0" maxOccurs="unbounded" />
+
+            <xsd:element name="storage" type="storage" minOccurs="1" maxOccurs="1" />
+            <xsd:element name="session-key-storage" type="storage" minOccurs="0" maxOccurs="1" />
+        </xsd:sequence>
+
+        <xsd:attribute name="alias" type="xsd:string" use="required" />
+    </xsd:complexType>
+
+    <xsd:complexType name="step">
+        <xsd:simpleContent>
+            <xsd:extension base="xsd:string">
+                <xsd:attribute name="key" type="xsd:string" use="required" />
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+
+    <xsd:complexType name="storage">
+        <xsd:sequence>
+            <xsd:element name="class" type="xsd:string" minOccurs="1" maxOccurs="1" />
+            <xsd:element name="argument" type="argument" minOccurs="0" maxOccurs="unbounded" />
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="argument">
+        <xsd:simpleContent>
+            <xsd:extension base="xsd:string">
+                <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+
+</xsd:schema>
