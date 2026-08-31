@@ -19,7 +19,7 @@ runs:
         tools: composer:v2, cs2pr
 
     - name: "Cache dependencies"
-      uses: "actions/cache@v3"
+      uses: "actions/cache@v6"
       with:
         path: |
           ~/.composer/cache

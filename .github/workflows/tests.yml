@@ -15,7 +15,6 @@ jobs:
     strategy:
       matrix:
         php-version:
-          - "8.1"
           - "8.2"
           - "8.3"
           - "8.4"
@@ -23,7 +22,7 @@ jobs:
 
     steps:
       - name: "Checkout repository"
-        uses: "actions/checkout@v3"
+        uses: "actions/checkout@v6"
 
       - name: "Setup Job with PHP version ${{ matrix.php-version }}"
         uses: "./.github/actions"
@@ -51,7 +50,7 @@ jobs:
 
     steps:
       - name: "Checkout repository"
-        uses: "actions/checkout@v3"
+        uses: "actions/checkout@v6"
 
       - name: "Setup Job with PHP version ${{ matrix.php-version }}"
         uses: "./.github/actions"
@@ -70,7 +69,7 @@ jobs:
 
     steps:
       - name: "Checkout repository"
-        uses: "actions/checkout@v3"
+        uses: "actions/checkout@v6"
 
       - name: "Setup Job with PHP version 8.4"
         uses: "./.github/actions"
@@ -89,7 +88,7 @@ jobs:
 
     steps:
       - name: "Checkout repository"
-        uses: "actions/checkout@v3"
+        uses: "actions/checkout@v6"
 
       - name: "Setup Job with PHP version 8.4"
         uses: "./.github/actions"
