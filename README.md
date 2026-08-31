@@ -15,7 +15,7 @@ Table of Contents
 
 ## Requirements
 
-- **PHP:** >=8.1
+- **PHP:** >=8.2
 - **Symfony:** ^6.4 || ^7.4 || ^8.0
 
 ## Installation

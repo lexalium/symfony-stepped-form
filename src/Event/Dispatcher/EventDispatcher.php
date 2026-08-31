@@ -7,9 +7,9 @@ namespace Lexal\SymfonySteppedForm\Event\Dispatcher;
 use Lexal\SteppedForm\EventDispatcher\EventDispatcherInterface;
 use Symfony\Contracts\EventDispatcher\EventDispatcherInterface as SymfonyEventDispatcherInterface;
 
-final class EventDispatcher implements EventDispatcherInterface
+final readonly class EventDispatcher implements EventDispatcherInterface
 {
-    public function __construct(private readonly SymfonyEventDispatcherInterface $dispatcher)
+    public function __construct(private SymfonyEventDispatcherInterface $dispatcher)
     {
     }
 

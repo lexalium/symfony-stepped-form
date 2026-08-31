@@ -11,11 +11,14 @@ use Lexal\SymfonySteppedForm\Routing\Redirector;
 use Lexal\SymfonySteppedForm\Tests\FormSettings;
 use Lexal\SymfonySteppedForm\Tests\Storage;
 use Matthias\SymfonyDependencyInjectionTest\PhpUnit\AbstractExtensionConfigurationTestCase;
+use PHPUnit\Framework\Attributes\RequiresMethod;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
 use Symfony\Component\DependencyInjection\Extension\ExtensionInterface;
+use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
 
 use function dirname;
 
+#[RequiresMethod(XmlFileLoader::class, 'load')]
 final class SteppedFormExtensionXmlTest extends AbstractExtensionConfigurationTestCase
 {
     protected function getContainerExtension(): ExtensionInterface
